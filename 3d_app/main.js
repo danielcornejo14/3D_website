@@ -1,4 +1,8 @@
 import './style.css';
+import jeffPath from './assets/jeff.png'
+import moonPath from './assets/moon.jpg'
+import normalPath from './assets/normal.jpg'
+import spacePath from './assets/space.jpg'
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
 
@@ -35,19 +39,19 @@ const controls = new OrbitControls(camera, renderer.domElement);
 
 
 
-const spaceTexture = new THREE.TextureLoader().load('assets/space.jpg')
+const spaceTexture = new THREE.TextureLoader().load(spacePath)
 scene.background = spaceTexture
 
 
-const jeffTexture = new THREE.TextureLoader().load('assets/jeff.png')
+const jeffTexture = new THREE.TextureLoader().load(jeffPath)
 const jeff = new THREE.Mesh(
   new THREE.BoxGeometry(3,3,3),
   new THREE.MeshBasicMaterial({color: 0xff700a})
 );
 scene.add(jeff);
 
-const moonTexture = new THREE.TextureLoader().load('assets/moon.jpg')
-const normalTexture = new THREE.TextureLoader().load('assets/normal.jpg')
+const moonTexture = new THREE.TextureLoader().load(moonPath)
+const normalTexture = new THREE.TextureLoader().load(normalPath)
 const moon = new THREE.Mesh(
   new THREE.SphereGeometry(3,32,32),
   new THREE.MeshStandardMaterial({
